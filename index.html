@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoberAI – Coming Soon</title>
+  <style>
+    :root{
+      --primary:#15b8ff; /* electric teal */
+      --secondary:#7b4a0f; /* warm beaver-brown */
+      --bg:#fafafa;
+    }
+    *{box-sizing:border-box;padding:0;margin:0;}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:#111;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:100vh;
+      text-align:center;
+      padding:1rem;
+    }
+    .card{
+      background:#fff;
+      border-radius:1rem;
+      box-shadow:0 4px 12px rgba(0,0,0,.1);
+      max-width:420px;
+      width:100%;
+      padding:2.5rem 2rem 3rem;
+    }
+    .logo{
+      width:96px;
+      height:96px;
+      margin:0 auto 1rem;
+    }
+    h1{
+      font-size:2rem;
+      margin-bottom:.5rem;
+    }
+    p{
+      margin-bottom:1.5rem;
+      line-height:1.4;
+    }
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:.75rem;
+    }
+    input[type="email"]{
+      padding:.75rem 1rem;
+      font-size:1rem;
+      border:1px solid #ddd;
+      border-radius:.5rem;
+    }
+    button{
+      background:var(--primary);
+      color:#fff;
+      border:none;
+      padding:.75rem 1rem;
+      font-size:1rem;
+      border-radius:.5rem;
+      cursor:pointer;
+      transition:background .2s;
+    }
+    button:hover{background:#0fa8ec;}
+    footer{
+      margin-top:1.75rem;
+      font-size:.75rem;
+      color:#666;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <!-- Placeholder logo: swap with your SVG/PNG -->
+    <svg class="logo" viewBox="0 0 64 64" fill="none">
+      <circle cx="32" cy="32" r="31" stroke="var(--secondary)" stroke-width="2"/>
+      <path d="M16 36c4 4 9 6 16 6s12-2 16-6" stroke="var(--secondary)" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="24" cy="28" r="3" fill="var(--secondary)"/>
+      <circle cx="40" cy="28" r="3" fill="var(--secondary)"/>
+      <path d="M26 42c2 1 4 1 6 1s4 0 6-1" stroke="var(--secondary)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+
+    <h1> BoberAI </h1>
+    <p>Budujemy warstwy kreatywności AI. <br/> Dołącz do listy, aby dowiedzieć się pierwszy, kiedy startujemy!</p>
+
+    <!-- 
+      Email capture via FormSubmit (free). 
+      Replace YOUR_EMAIL@example.com with your email or later a Mailchimp/FormSpree endpoint. 
+    -->
+    <form action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST">
+      <input type="email" name="email" placeholder="Twój e-mail" required>
+      <button type="submit">Zapisz się</button>
+      <!-- Anti-spam -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://boberai.pl/dziękujemy.html">
+    </form>
+
+    <footer>
+      &copy; <span id="year"></span> BoberAI. Wszystkie prawa zastrzeżone.
+    </footer>
+  </main>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
